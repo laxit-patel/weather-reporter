@@ -1,5 +1,7 @@
 export default function App() {
     return (
-        <div>App</div>
+        <h1 className="text-3xl font-bold text-gray-500">
+            Hello world!
+        </h1>
     )
 }

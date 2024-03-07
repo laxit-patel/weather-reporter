@@ -36,5 +36,6 @@ Technologies used in the project:
 *   React
 *   Typescript
 *   Vite
+*   Tailwind CSS
 *   GeoLocation
 *   Open Weather
