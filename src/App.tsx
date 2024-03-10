@@ -1,7 +1,16 @@
+import Main from "./layout/Main";
+import Form from "./components/Form";
+
 export default function App() {
     return (
-        <h1 className="text-3xl font-bold text-gray-500">
-            Hello world!
-        </h1>
+        <>
+            <Main>
+                <div className="container mx-auto px-4 text-center">
+                    <Form />
+                </div>
+            </Main>
+        </>
     )
 }
+
+

@@ -27,8 +27,6 @@ npm install
 npm run build
 ```
 
-  
-  
 <h2>💻 Built with</h2>
 
 Technologies used in the project:
@@ -37,5 +35,13 @@ Technologies used in the project:
 *   Typescript
 *   Vite
 *   Tailwind CSS
+*   Material UI
 *   GeoLocation
 *   Open Weather
+*   Axios
+*   .ENV Variables
+*   
+
+HighLights
+
+* Layout wise segregation
