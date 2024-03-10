@@ -3,8 +3,8 @@ import { Navbar, Typography, Button, Input } from "@material-tailwind/react";
 import { ForecastData } from './types/ForecastResponse';
 import { getWeatherForecast } from './services/forecast';
 import Profile from './layout/partials/Profile';
-import Skeleton from './components/Skeleton';
 import GeoLocationButton from './components/GeoLocationButton';
+import Dashboard from './components/Dashboard';
 
 export default function App() {
 
@@ -48,7 +48,7 @@ export default function App() {
                                     crossOrigin={"anonymous"}
                                     type="search"
                                     label="Search You City . . ."
-                                    className="pr-20"
+                                    className="pr-20 rounded-full"
                                     value={city}
                                     onChange={(e) => setCity(e.target.value)}
                                     containerProps={{
@@ -58,8 +58,8 @@ export default function App() {
                                 <Button
                                     placeholder={"search"}
                                     size="sm"
-                                    color="amber"
-                                    className="!absolute right-1 top-1 rounded"
+                                    color="light-blue"
+                                    className="!absolute right-1 top-1 rounded-full"
                                     onClick={handleForecast}
                                 >
                                     Search
@@ -74,19 +74,7 @@ export default function App() {
                 <div className="grid mt-16 min-h-[82vh] w-full lg:h-[54rem] md:h-[34rem] place-items-stretch bg-[url('/image/bg-hero-17.svg')] bg-center bg-contain bg-no-repeat">
                     <div className="container mx-auto px-4 text-center">
 
-                        {loading ? (
-                            <Skeleton width="w-96" height="h-5" borderRadius="rounded-full" rows={5} className="mb-4" />
-                        ) : forecastData ? (
-                            // Display forecast data when available
-                            <div className="border border-gray-300 rounded-md p-4">
-                                <h2 className="text-lg font-semibold mb-2">Weather Forecast for {forecastData.location?.name}</h2>
-                                <p>Current Temperature: {forecastData.current?.temp_c}°C ({forecastData.current?.temp_f}°F)</p>
-                                <p>Condition: {forecastData.current?.condition?.text}</p>
-                                <p>Wind Speed: {forecastData.current?.wind_kph} km/h</p>
-                                <p>Humidity: {forecastData.current?.humidity}%</p>
-                                <p>UV Index: {forecastData.current?.uv}</p>
-                            </div>
-                        ) : null}
+                        <Dashboard forecastData={forecastData} loading={loading} />
 
                     </div>
                 </div>
